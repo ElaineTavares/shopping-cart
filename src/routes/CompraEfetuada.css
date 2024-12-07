@@ -1,0 +1,44 @@
+.compra-efetuada {
+    display: flex;
+    flex-flow: column;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;    /* Centraliza verticalmente */
+    height: 80vh;          /* Exemplo de altura total da viewport */
+    gap: 30px;
+  }
+
+  .img-compra-efetuada{
+    width: 30%;
+  }
+
+  @media(max-width: 1200px){
+    .img-compra-efetuada{
+        width: 40%;
+      }
+  }
+
+  @media(max-width: 960px){
+    .img-compra-efetuada{
+        width: 50%;
+      }
+  }
+
+  @media(max-width: 720px){
+    .img-compra-efetuada{
+        width: 60%;
+      }
+  }
+  
+  @media(max-width: 530px){
+    .img-compra-efetuada{
+        width: 70%;
+      }
+  }
+
+  @media(max-width: 418px){
+    .h1-compra-efetuada{
+        text-align: center;
+    }
+  }
+  
+  
