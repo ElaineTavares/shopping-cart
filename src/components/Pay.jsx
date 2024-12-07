@@ -33,9 +33,9 @@ export default function Pay({total}) {
       <input type="text" placeholder='123' />
     </div>
     <div>
-      <p style={{fontSize: "14px", marginTop: "10px",  marginBottom: "10px"}}>Total: U$ {total} </p>
+      <p style={{fontSize: "14px", marginTop: "10px",  marginBottom: "10px"}}>Total Amount: U$ {total} </p>
     </div>   
-    <button onClick={compraEfetuada} className='add-cart'>Finalizar</button>
+    <button onClick={compraEfetuada} className='add-cart'>Complete Purchase</button>
 </div>
   )
 }
