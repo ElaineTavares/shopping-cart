@@ -13,7 +13,7 @@ export default function Card({image, title, category, price, id}) {
         <div className="card-text">
             <h5>{title}</h5>
             <h6>{category}</h6>
-            <p>{price}</p>
+            <p>U$ {price}</p>
         </div> 
     </div>
   )
