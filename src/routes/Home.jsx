@@ -10,6 +10,7 @@ import { useCartContext } from '../contexts/cart'
 export default function Home() {
   const {item, addItem} = useCartContext()
   const [products, setProducts] = useState([])
+  const [msnAdd, setMsnAdd] = useState("Products")
 
   const api = async () =>{
     try {
@@ -27,6 +28,11 @@ export default function Home() {
       addItem(product)
       localStorage.setItem('produtos', JSON.stringify([...item, product]));
       console.log("LOCAL STORAGE", localStorage)
+      setMsnAdd("Product add to cart")
+      setTimeout(() => {
+        setMsnAdd("Products")
+      }, 3000);
+
     } else {
         alert("Esse item já está no carrinho")
     }   
@@ -39,7 +45,7 @@ export default function Home() {
 
   return (
     <section className="home">
-      <h1>Products</h1>
+      <h1>{msnAdd}</h1>
       {products.length === 0 ? (
       <p>Carregando...</p>
       ) : (
@@ -49,7 +55,7 @@ export default function Home() {
               image={product.image} 
               title={product.title} 
               category={product.category} 
-              price={product.price}  
+              price={product.price} 
               />
               <button className='add-cart' onClick={() => adicionar(product)}>Add to cart</button>
           </div>    

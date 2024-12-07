@@ -5,12 +5,18 @@ import Pay from '../components/Pay'
 
 
 export default function ShoppingCart() {
+  const [msnDel, setMsnDel] = useState("Shoppping cart")
   const [array, setArray] = useState(JSON.parse(localStorage.getItem("produtos")) || []);
+  
 
   const excluir = (id) => {
     const newArray = array.filter((item) => item.id !== id);
     setArray(newArray);
     localStorage.setItem('products', JSON.stringify(newArray));
+     setMsnDel("Product removed from the shopping cart")
+      setTimeout(() => {
+        setMsnDel("Shoppping cart")
+      }, 3000);
   };
 
   const aumentarItem = (id) => {
@@ -40,7 +46,7 @@ export default function ShoppingCart() {
 
   return (
     <section className="shopping-cart">
-      <h1>Shopping cart</h1>
+      <h1>{msnDel}</h1>
       <div className='products'>
         
         {array.map((item) => ( 
